@@ -1,0 +1,89 @@
+.btn-default {
+    border: 2px solid rgba(white, 0.1);
+    background-color: rgba(white, 0.05);
+    color: rgba(white, 0.5);
+    transition: 0.1s all;
+
+    &:hover,
+    &:focus {
+        border: 2px solid rgba(white, 0.25);
+        color: rgba(white, 1);
+        background-color: rgba(white, 0.1);
+        transition: 0.1s all;
+    }
+}
+
+.btn-primary {
+    border: 2px solid rgba($purple, 0.5);
+    color: rgba(white, 0.9);
+    background-color: rgba($purple, 0.25);
+    transition: 0.1s all;
+
+    &:hover,
+    &:focus {
+        border: 2px solid rgba($purple, 1);
+        color: rgba(white, 1);
+        background-color: rgba($purple, 0.5);
+        transition: 0.1s all;
+    }
+}
+
+.btn-info {
+    border: 2px solid rgba($blue, 0.5);
+    color: rgba(white, 0.9);
+    background-color: rgba($blue, 0.25);
+    transition: 0.1s all;
+
+    &:hover,
+    &:focus {
+        border: 2px solid rgba($blue, 1);
+        color: rgba(white, 1);
+        background-color: rgba($blue, 0.5);
+        transition: 0.1s all;
+    }
+}
+
+.btn-danger{
+    border: 2px solid rgba($red, 0.5);
+    color: rgba(white, 0.9);
+    background-color: rgba($red, 0.25);
+    transition: 0.1s all;
+
+    &:hover,
+    &:focus {
+        border: 2px solid rgba($red, 1);
+        color: rgba(white, 1);
+        background-color: rgba($red, 0.5);
+        transition: 0.1s all;
+    }
+}
+
+.btn-success {
+    border: 2px solid rgba($green, 0.5);
+    color: rgba(white, 0.9);
+    background-color: rgba($green, 0.25);
+    transition: 0.1s all;
+
+    &:hover,
+    &:focus {
+        border: 2px solid rgba($green, 1);
+        color: rgba(white, 1);
+        background-color: rgba($green, 0.5);
+        transition: 0.1s all;
+    }
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-dropdown {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}

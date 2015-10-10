@@ -1,0 +1,124 @@
+#loading {
+    display: none;
+
+    p {
+        text-align: center;
+        font-size: 18px;
+        color: rgba(white, 0.25);
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    span {
+        display: inline-block;
+        width: 7px;
+        height: 40px;
+
+        &.item-1 {
+            background: #40fec5;
+            -webkit-animation-name: scale;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-duration: 1.2s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-delay: -0.9s;
+        }
+
+        &.item-2 {
+            background: #8b60e8;
+            -webkit-animation-name: scale;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-duration: 1.2s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-delay: -0.8s;
+        }
+
+        &.item-3 {
+            background: #40fec5;
+            -webkit-animation-name: scale;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-duration: 1.2s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-delay: -0.7s;
+        }
+
+        &.item-4 {
+            background: #8b60e8;
+            -webkit-animation-name: scale;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-duration: 1.2s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-delay: -0.6s;
+        }
+
+        &.item-5 {
+            background: #40fec5;
+            -webkit-animation-name: scale;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-duration: 1.2s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-delay: -0.5s;
+        }
+
+        &.item-6 {
+            background: #8b60e8;
+            -webkit-animation-name: scale;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-duration: 1.2s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-delay: -0.4s;
+        }
+
+        &.item-7 {
+            background: #40fec5;
+            -webkit-animation-name: scale;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-duration: 1.2s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-delay: -0.3s;
+        }
+    }
+}
+
+@-webkit-keyframes scale {
+    0% {
+        transform: scaleY(0.2);
+    }
+
+    40% {
+        transform: scaleY(0.2);
+    }
+
+    100% {
+        transform: scaleY(0.2);
+    }
+
+    20% {
+        transform: scaleY(1);
+    }
+
+    60% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scaleY(0.2);
+    }
+
+    40% {
+        transform: scaleY(0.2);
+    }
+
+    100% {
+        transform: scaleY(0.2);
+    }
+
+    20% {
+        transform: scaleY(1);
+    }
+
+    60% {
+        transform: scaleY(1);
+    }
+}

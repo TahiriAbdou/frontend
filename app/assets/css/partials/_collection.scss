@@ -1,0 +1,249 @@
+#collection {
+	margin-top: 5px;
+
+	.form-control {
+		background-color: #323138;
+		border: 1px solid rgba(white, 0);
+		font-weight: 400;
+		box-shadow: none;
+		color: white;
+		transition: all 0.1s;
+
+		&:focus {
+			background-color: #49494e;
+			border-color: rgba(139, 96, 232, 0);
+			outline: 0;
+			box-shadow: none;
+			transition: all 0.1s;
+		}
+	}
+
+	.nav li {
+		margin-right: 10px;
+		a {
+			padding: 5px 15px;
+			height: 34px;
+			border: 2px solid rgba(white, 0.1);
+			background: none;
+			color: rgba(white, 0.5);
+			transition: 0.1s all;
+
+			&:hover,
+			&:focus {
+				color: white;  
+				background-color: rgba(white, 0.1);
+				border: 2px solid rgba(white, 0.25);
+				transition: 0.1s all;
+			}
+		}
+
+		&.active a {
+			border: 2px solid $purple;
+			background-color: rgba($purple, 1);
+			color: rgba(white, 1);
+			font-weight: 500;
+		}
+
+		&.nav-text {
+			margin-top: 6px;
+			color: rgba(white, 0.5);
+			margin-right: 15px;
+		}
+	}
+
+	.navbar-right {
+		margin-right: 10px;
+
+		.btn-default {
+			border: 2px solid rgba(white, 0.1);
+			background-color: transparent;
+			color: rgba(white, 0.5);
+			height: 34px;
+			transition: 0.1s all;
+
+			i {
+				font-size: 18px;
+			}
+
+			&:hover,
+			&:focus {
+				border: 2px solid rgba(white, 0.25);
+				color: rgba(white, 1);
+				background-color: rgba(white, 0.1);
+				transition: 0.1s all;
+			}
+		}
+	}
+	
+	.collection-header h2 {
+		color: white;
+		font-weight: 300;
+		border-bottom: 1px solid rgba(white, 0.05);
+		padding-bottom: 15px;
+		margin-bottom: 25px;
+	}
+	
+	/* Panel */
+	
+	.cd-panel {
+		h2 {
+			margin-top: 5px;
+		}
+		p {
+			margin: 0;
+		}
+        .panel-albumart {
+            max-height: 100px;
+            width: 100%;
+            position: absolute;
+
+            background: 
+                -webkit-linear-gradient(top, 
+                    rgba(0,0,0,0) 0%, 
+                    rgba(0,0,0,0) 20%,
+                    rgba(0,0,0,1) 80%,
+                    rgba(0,0,0,1) 100%
+                );
+        }
+	}
+	
+	/* Albums page */
+	
+	#collectionAlbums,
+	#collectionArtists {
+        .toggle-panel {
+            display: inline;
+        }
+        
+		.art-list {
+			list-style: none;
+			margin-left: -2.5%;
+			
+			li {
+				display: inline-block;
+				padding: 10px;
+				margin: 0 0 2.5% 2.5%;
+				font-size: 16px;
+				vertical-align: top;
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				width: 16.5%;
+				border: 1px solid rgba(white, 0.05);
+				border-radius: 3px;
+				transition: all 0.2s;
+				
+				&:hover,
+				&:focus {
+					background-color: rgba(white, 0.05);
+					border: 1px solid rgba(white, 0.1);
+					transition: all 0.2s;
+					box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.25);
+				}
+				
+				h3 {
+					font-size: 16px;
+					font-weight: 500;
+					color: white;
+					margin-top: 0;
+					margin-bottom: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+				}
+				
+				p {
+					margin-top: 0;
+					margin-bottom: 0;
+					font-size: 14px;
+					color: rgba(white, 0.5);
+				}
+
+				img {
+					max-width: 100%;
+					height: auto;
+					margin: 0 0 10px;
+					border-radius: 3px;
+				} 
+			}
+		}
+		@media (max-width: 686px) {
+			ul li {
+				display: block;
+				margin: 0 0 5px;
+			}
+			ul li a {
+				display: block;
+			}
+			ul {
+				margin-left: 0;
+			}
+			ul li {
+				width: 100% !important; /* over-ride all li styles */
+				margin: 0 0 20px;
+			}
+		}
+		
+	}
+
+}
+
+#collection,
+#playlist {
+    .nav li {
+        margin-right: 10px;
+        a {
+            padding: 5px 15px;
+            height: 34px;
+            border: 2px solid rgba(white, 0.1);
+            background: none;
+            color: rgba(white, 0.5);
+            transition: 0.1s all;
+
+            &:hover,
+            &:focus {
+                color: white;  
+                background-color: rgba(white, 0.1);
+                border: 2px solid rgba(white, 0.25);
+                transition: 0.1s all;
+            }
+        }
+
+        &.active a {
+            border: 2px solid $purple;
+            background-color: rgba($purple, 1);
+            color: rgba(white, 1);
+            font-weight: 500;
+        }
+
+        &.nav-text {
+            margin-top: 6px;
+            color: rgba(white, 0.5);
+            margin-right: 15px;
+        }
+    }
+
+    .navbar-right {
+        margin-right: 10px;
+
+        .btn-default {
+            border: 2px solid rgba(white, 0.1);
+            background-color: transparent;
+            color: rgba(white, 0.5);
+            height: 34px;
+            transition: 0.1s all;
+
+            i {
+                font-size: 18px;
+            }
+
+            &:hover,
+            &:focus {
+                border: 2px solid rgba(white, 0.25);
+                color: rgba(white, 1);
+                background-color: rgba(white, 0.1);
+                transition: 0.1s all;
+            }
+        }
+    }
+}
