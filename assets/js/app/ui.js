@@ -59,7 +59,7 @@ $(document).ready(function () {
             "sEmptyTable": "Your collection is empty. Click <a onclick=\"settings.openSettingsMenu();\" href=\"javascript:void(0);\">here</a> to configure your settings."
         },
         "columns": [
-            {"width": "25px"},
+            {"width": "50px"},
             null,
             null,
             null,
@@ -77,7 +77,7 @@ $(document).ready(function () {
             "sEmptyTable": "Your collection is empty. Click <a onclick=\"settings.openSettingsMenu();\" href=\"javascript:void(0);\">here</a> to configure your settings."
         },
         "columns": [
-            {"width": "25px"},
+            {"width": "50px"},
             null,
             null,
             null,
@@ -95,7 +95,7 @@ $(document).ready(function () {
             "sEmptyTable": "Your collection is empty. Click <a onclick=\"settings.openSettingsMenu();\" href=\"javascript:void(0);\">here</a> to configure your settings."
         },
         "columns": [
-            {"width": "25px"},
+            {"width": "50px"},
             null,
             null,
             null,

@@ -15,6 +15,7 @@
     <link href="assets/css/vendor/alertify.core.css" rel="stylesheet">
     <link href="assets/css/vendor/dataTables.bootstrap.css" rel="stylesheet">
     <link href="assets/css/vendor/bootstrap-select.min.css" rel="stylesheet">
+    <link href="assets/css/vendor/jquery.dropdown.min.css" rel="stylesheet">
     <link href="assets/fonts/fira.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/override-scss.css" rel="stylesheet">
@@ -129,10 +130,11 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <!--
+<!--
                                     <tr data-song-name="Get Away" data-artist-name="CHVRCHES" data-album-art="https://i.imgur.com/B2dOAgV.png" data-id="0" data-value="http://s19.pleer.com/0042fbbee67d1a986f27c8e5cc01ac65d2aff50b70f6b1adc52479a3896b905dd46d90672153f492062df888685e8a5414bb43750095125a93/4835f25552.mp3">
                                     <td class="result-control">
                                     <button class="btn btn-transparent control-show"><a href="#"><i class="material-icons">add</i></a></button>
+                                        <button class="btn btn-transparent control-show"><a href="#" data-jq-dropdown="#dropdown"><i class="material-icons">more_horiz</i></a></button>
                                     <button class="btn btn-transparent"><a href="#"><i class="material-icons">pause</i></a></button>
                                     </td>
                                     <td>Get Away</td>
@@ -140,7 +142,7 @@
                                     <td>Every Open Eye</td>
                                     <td>4:39</td>
                                     </tr>
-                                    -->
+-->
                                     </tbody>
                                 </table>
                             </div>
@@ -326,6 +328,7 @@
                                             <tr data-song-name="Get Away" data-artist-name="CHVRCHES" data-album-art="https://i.imgur.com/B2dOAgV.png" data-id="0" data-value="http://s19.pleer.com/0042fbbee67d1a986f27c8e5cc01ac65d2aff50b70f6b1adc52479a3896b905dd46d90672153f492062df888685e8a5414bb43750095125a93/4835f25552.mp3">
                                             <td class="result-control">
                                             <button class="btn btn-transparent control-show"><a href="#"><i class="material-icons">add</i></a></button>
+                                            <button class="btn btn-transparent control-show"><a href="#" data-jq-dropdown="#dropdown"><i class="material-icons">more_horiz</i></a></button>
                                             <button class="btn btn-transparent"><a href="#"><i class="material-icons">pause</i></a></button>
                                             </td>
                                             <td>Get Away</td>
@@ -368,6 +371,7 @@
 <tr data-song-name="Get Away" data-artist-name="CHVRCHES" data-album-art="https://i.imgur.com/B2dOAgV.png" data-id="0" data-value="http://s19.pleer.com/0042fbbee67d1a986f27c8e5cc01ac65d2aff50b70f6b1adc52479a3896b905dd46d90672153f492062df888685e8a5414bb43750095125a93/4835f25552.mp3">
 <td class="result-control">
 <button class="btn btn-transparent control-show"><a href="#"><i class="material-icons">add</i></a></button>
+<button class="btn btn-transparent control-show"><a href="#" data-jq-dropdown="#dropdown"><i class="material-icons">more_horiz</i></a></button>
 <button class="btn btn-transparent"><a href="#"><i class="material-icons">pause</i></a></button>
 </td>
 <td>Get Away</td>
@@ -523,6 +527,7 @@
 <tr data-song-name="Get Away" data-artist-name="CHVRCHES" data-album-art="https://i.imgur.com/B2dOAgV.png" data-id="0" data-value="http://s19.pleer.com/0042fbbee67d1a986f27c8e5cc01ac65d2aff50b70f6b1adc52479a3896b905dd46d90672153f492062df888685e8a5414bb43750095125a93/4835f25552.mp3">
 <td class="result-control">
 <button class="btn btn-transparent control-show"><a href="#"><i class="material-icons">add</i></a></button>
+<button class="btn btn-transparent control-show"><a href="#" data-jq-dropdown="#dropdown"><i class="material-icons">more_horiz</i></a></button>
 <button class="btn btn-transparent"><a href="#"><i class="material-icons">pause</i></a></button>
 </td>
 <td>Get Away</td>
@@ -622,6 +627,20 @@
 </div> <!-- wrapper -->
 
 
+<!-- Dropdowns -->
+
+<div id="dropdown" class="jq-dropdown jq-dropdown-tip">
+    <ul class="jq-dropdown-menu">
+        <li class="cyan"><a href="#1"><i class="material-icons">playlist_add</i> <span>Add to Playlist</span></a></li>
+        <li class="purple"><a href="#2"><i class="material-icons">add_circle</i> <span>Add to Collection</span></a></li>
+        <li class="jq-dropdown-divider"></li>
+        <li><a href="#3">Item 3</a></li>
+        <li><a href="#4">Item 4</a></li>
+        <li><a href="#5">Item 5</a></li>
+        <li><a href="#5">Item 6</a></li>
+    </ul>
+</div>
+    
 <!-- Modals -->
 
 <!-- Modal: Add Playlist -->
@@ -848,6 +867,7 @@
 <script type="text/javascript" src="assets/js/deps/alertify.min.js"></script>
 <script type="text/javascript" src="assets/js/deps/jquery.dataTables.js"></script>
 <script type="text/javascript" src="assets/js/deps/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="assets/js/deps/jquery.dropdown.js"></script>
 <script src="assets/js/app/ui.js"></script>
 <script src="assets/js/app/player.js"></script>
 <script src="assets/js/app/search.js"></script>

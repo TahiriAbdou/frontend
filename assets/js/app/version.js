@@ -9,7 +9,7 @@ var versionChecker = {
             if (data != null) {
               if (versionChecker.version < data.version) {
                   // confirm dialog
-                  alertify.confirm("A new version of Aurous is available.", function (e) {
+                  alertify.confirm("<strong>Update Alert</strong><br>A new version of Aurous is available.", function (e) {
                       if (e) {
                           if (typeof openUrl == 'function') {
                               openUrl(data.moreInfo);
