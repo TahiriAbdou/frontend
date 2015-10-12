@@ -109,7 +109,6 @@ var settings = {
                 paths += ",";
             }
             var path = $(this).text();
-            path = "\"" + path.replace(/\s+/, "") + "\"";
             paths += path;
 
         });
