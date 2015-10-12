@@ -2,11 +2,6 @@ $(document).ready(function () {
 
     $.ajaxSetup({ cache: true });
     alertify.success("Connected to the Aurous Network");
-
-    if (settings.getInvertedNav()) {
-        $('#titlebar').addClass("left");
-    }
-
     /* Disable drag and drop */
     $('a').on('dragstart', function (event) {
         event.preventDefault();
@@ -169,7 +164,7 @@ $(document).ready(function () {
     });
 
     $('#nav-collection').click(function (event) {
-
+        
         window.activeViewPort = "collection";
         $('#discover').fadeOut($switchPageSpeed);
         $('#playlist').fadeOut($switchPageSpeed);
@@ -180,7 +175,7 @@ $(document).ready(function () {
 
         event.preventDefault();
     });
-
+    
     $('.playlist-study').click(function (event) {
         $('#discover').fadeOut($switchPageSpeed);
         $('#collection').fadeOut($switchPageSpeed);
@@ -191,7 +186,7 @@ $(document).ready(function () {
 
         event.preventDefault();
     });
-
+	
 	/* Collection nav switch page */
 
 	$('#collectionNavArtists').click(function (event) {
@@ -434,11 +429,11 @@ $(document).ready(function () {
 					position = mouse + scroll;
 
 				// opening menu would pass the side of the page
-				if (mouse + menu > win && menu < mouse)
+				if (mouse + menu > win && menu < mouse) 
 					position -= menu;
 
 				return position;
-			}
+			}    
 
 		};
 	})(jQuery, window);
@@ -451,7 +446,7 @@ $(document).ready(function () {
 			console.log(msg);
 		}
 	});
-
+	
     //open the lateral panel
     $('.toggle-panel a').on('click', function (event) {
         var href = $(this).attr('href');
@@ -465,7 +460,7 @@ $(document).ready(function () {
             event.preventDefault();
         }
     });
-
+    
 
 	/* Show controls while hovering table row */
 
@@ -480,9 +475,9 @@ $(document).ready(function () {
 			"opacity": 0
 		});
 	});
-
+    
     $('.selectSearchEngine').selectpicker();
-
+	
     mediaScanner.init();
     $('#nav-discover').click();
     if (typeof loadSettings == 'function') {
