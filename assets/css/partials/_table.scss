@@ -1,131 +1,92 @@
-.table > {
-    margin-bottom: -25px;
-    min-width: 600px;
-    overflow: auto;
+#titlebar {
+    .navbar {
+        min-height: 30px;
+    }
 
-    thead > tr > th {
-        border-bottom: 1px solid rgba(white, 0.05);
-        font-weight: 500;
+    .navbar li a {
+        padding: 0;
+    }
 
-        > i {
-            font-size: 18px;
+    .navbar-inverse {
+        background-color: $titlebar;
+        border-radius: 0;
+        border: none;
+    }
+
+    .navbar-brand {
+        height: 30px;
+        padding: 7px 15px;
+
+        img {
+            height: 20px;
         }
     }
-    
-    tbody {
-        .result-data-value {
-            display: none;
-        }
 
-        > tr {
-            > td {
-                border-top: 1px solid rgba(white, 0.025);
-                padding: 4px;
-                vertical-align: middle;
+    .btn-window {
+        width: 90px;
+        padding: 2px 0 6px 10px;
 
-                > {
-                    a {
-                        margin-right: 0px;
-                        color: rgba(white, 0.5);
-                        transition: color 0.1s;
+        li a {
+            opacity: 0.5;
+            margin-top: 0;
+            transition: opacity 0.1s;
+            padding: 0 7px 0 7px;
 
-                        &:hover {
-                            color: rgba(white, 1);
-                            transition: color 0.1s;
-                        }
-
-                        > i {
-                            font-size: 24px;
-                            margin-top: -8px;
-                        }
-                    }
-
-                    button > a {
-                        margin-right: 0px;
-                        color: rgba(white, 0.5);
-                        transition: color 0.1s;
-
-                        &:hover,
-                        &:focus {
-                            color: rgba(white, 1);
-                            transition: color 0.1s;
-                        }
-                    }
-                    button {
-                        color: rgba(white, 0.5);
-
-                        &:hover,
-                        &:focus {
-                            color: rgba(white, 1);
-                            transition: color 0.1s;
-                        }
-                    }
-                }
-            }
-
-            &.result-now-playing > td { //now playing
-                color: rgba(white, 1);
-                background-color: rgba(white, 0.05);
-
-                > {
-                    button > a {
-                        margin-right: 0px;
-                        color: rgba(white, 1);
-                        transition: color 0.1s;
-
-                        &:hover,
-                        &:focus {
-                            color: rgba(white, 1);
-                            transition: color 0.1s;
-                        }
-                    }
-                    button {
-                        color: rgba(white, 1);
-
-                        &:hover,
-                        &:focus {
-                            color: rgba(white, 1);
-                            transition: color 0.1s;
-                        }
-                    }
-                }
+            &:hover {
+                opacity: 1;
+                transition: opacity 0.1s;
             }
         }
+
+        li.close-app:hover {
+            background-color: rgba(red, 0.25);
+        }
+    }
+
+    .navbar-nav {
+        > li {
+            float: left;
+        }
+
+        &.navbar-right:last-child {
+            margin-right: -20px;
+        }
+    }
+
+    .navbar-collapse.collapse {
+        display: block;
     }
 }
 
-.table-hover > tbody > tr:hover {
-    background-color: rgba(white, 0.02);
-}
+#titlebar.left {
+    .navbar-brand {
+        position: absolute;
+        right: 0;
+    }
 
-.result-control {
-    a i {
-        margin-top: 3px;
+    .btn-window {
+        position: absolute;
+        left: -15px;
+    }
+
+    .btn-window li {
+        float:right;
     }
 }
 
-.result-control .control-show {
-    opacity: 0;
-}
+@media screen and(max-width: 767px) {
+    #titlebar {
+        .navbar-nav {
+            margin: 0;
+            float: right;
+        }
 
-.result-now-playing .control-show {
-    opacity: 1 !important;
-}
+        .navbar-brand {
+            padding: 7px 0;
+        }
+    }
 
-/* Datatable */
-
-table.dataTable thead .sorting:after {
-	content: "";
-}
-table.dataTable thead .sorting_asc:after {
-	content: "";
-}
-table.dataTable thead .sorting_desc:after {
-	content: "";
-}
-
-/* Top result */
-
-.table img {
-    width: 100%;
+    .table-responsive {
+        border: none;
+    }
 }
