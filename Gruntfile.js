@@ -13,8 +13,13 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '.',
-                    src: ['LICENSE.md', 'package.json', 'index.html'],
+                    src: ['LICENSE.md', 'index.html'],
                     dest: 'build/'
+                }, {
+                    expand: true,
+                    cwd: 'vendor/',
+                    src: ['**/*'],
+                    dest: 'build/vendor/'
                 }, {
                     expand: true,
                     cwd: 'images/',
@@ -90,5 +95,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['browserify:build', 'sass', 'newer:copy:dev', 'open', 'watchChokidar']);
+    grunt.registerTask('default', ['bower_clean', 'browserify:build', 'sass', 'newer:copy:dev', 'open', 'watchChokidar']);
 };
