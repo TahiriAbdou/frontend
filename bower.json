@@ -18,10 +18,10 @@
       "**/!(dist)"
     ],
     "seiyria-bootstrap-slider": [
-      "src"
+      "**/!(dist)"
     ],
     "google-material-icons": [
-      "**/!(dist)"
+      "src"
     ],
     "bootstrap-select": [
       "**/!(dist)"
