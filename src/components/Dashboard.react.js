@@ -5,6 +5,7 @@ import utils from '../utils/Util';
 import _ from 'lodash';
 import Featured from './FeaturedSongs.react';
 import Search from './SearchSongs.react';
+import LazyLoad from 'react-lazy-load';
 
 
 let If = React.createClass({
@@ -43,10 +44,14 @@ var Dashboard = React.createClass({
                     </div>
                 </form>
                 <If test={!this.state.searchQuery}>
+                <LazyLoad>
                     <Featured />
+                </LazyLoad>
                 </If>
                 <If test={this.state.searchQuery}>
+                <LazyLoad>
                     <Search value={this.state.searchQuery} />
+                </LazyLoad>
                 </If>
 
             </div>
