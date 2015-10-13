@@ -4,8 +4,6 @@ import Settings from '../utils/SettingsUtil';
 import utils from '../utils/Util';
 import ReactDataGrid from 'react-data-grid';
 
-
-//generate a fixed number of rows and set their properties
 var _rows = [];
 for (var i = 1; i < 200; i++) {
     _rows.push({
@@ -24,7 +22,7 @@ var rowGetter = function(i) {
     return _rows[i];
 };
 
-//Custom Formatter component
+//Custom Formatter components
 var ImageFormatter = React.createClass({
     render: function() {
         return (<img width='75' src={this.props.value} />);
