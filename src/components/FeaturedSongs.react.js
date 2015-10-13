@@ -5,7 +5,7 @@ import utils from '../utils/Util';
 import ReactDataGrid from 'react-data-grid';
 
 var _rows = [];
-for (var i = 1; i < 200; i++) {
+for (var i = 1; i < 10; i++) {
     _rows.push({
         image: 'https://i1.sndcdn.com//artworks-000115464710-6br5gk-t500x500.jpg',
         controls: 'Task ',
