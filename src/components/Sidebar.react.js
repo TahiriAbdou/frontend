@@ -29,10 +29,12 @@ var Sidebar = React.createClass({
                     </a>
                 </li>
         </Router.Link>
+        <Router.Link to="mycollection">
                 <li id="nav-collection">
                     <a ><i className="material-icons">queue_music</i><span>My Collection</span>
                     </a>
                 </li>
+        </Router.Link>
         </ul>
         
       </div>

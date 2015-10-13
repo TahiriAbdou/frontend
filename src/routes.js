@@ -3,6 +3,7 @@ import React from 'react/addons';
 import Framework from './components/Framework.react';
 import Dashboard from './components/Dashboard.react';
 import Preferences from './components/Preferences.react';
+import MyCollection from './components/MyCollection.react';
 import About from './components/About.react';
 
 import Router from 'react-router';
@@ -22,6 +23,7 @@ var routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="framework" handler={Framework}>
       <Route name="dashboard" path="/dashboard" handler={Dashboard}/>
+      <Route name="mycollection" path="/dashboard/mycollection" handler={MyCollection}/>
       <Route name="preferences" path="/dashboard/preferences" handler={Preferences}/>
       <Route name="about" path="/dashboard/about" handler={About}/>
     </Route>
