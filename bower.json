@@ -1,0 +1,32 @@
+{
+  "name": "aurous",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "alertify.js": "~0.3.11",
+    "seiyria-bootstrap-slider": "~5.2.1",
+    "bootstrap-select": "~1.7.4"
+  },
+  "dependenciesIgnore": {
+    "font-awesome": [
+      "less",
+      "scss",
+      ".*"
+    ],
+    "bootstrap": [
+      "**/!(dist)"
+    ],
+    "seiyria-bootstrap-slider": [
+      "**/!(dist)"
+    ],
+    "bootstrap-select": [
+      "**/!(dist)"
+    ],
+    "jquery": [
+      "**/!(dist)"
+    ],
+    "alertify.js": [
+      "*"
+    ]
+  }
+}
