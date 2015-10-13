@@ -7,7 +7,7 @@ import ReactDataGrid from 'react-data-grid';
 
 //generate a fixed number of rows and set their properties
 var _rows = [];
-for (var i = 1; i < 100; i++) {
+for (var i = 1; i < 200; i++) {
     _rows.push({
         image: 'https://i1.sndcdn.com//artworks-000115464710-6br5gk-t500x500.jpg',
         controls: 'Task ',
@@ -27,7 +27,7 @@ var rowGetter = function(i) {
 //Custom Formatter component
 var ImageFormatter = React.createClass({
     render: function() {
-        return (<img src={this.props.value} />);
+        return (<img width='75' src={this.props.value} />);
     }
 });
 
@@ -45,31 +45,42 @@ var ControlsFormatter = React.createClass({
 
 //Columns definition
 var columns = [{
-        key: 'image',
-        name: 'image',
-        width: 75,
-        formatter: ImageFormatter
-    }, {
-        key: 'controls',
-        name: 'controls',
-        className: 'result-control',
-        width: 120,
-        formatter: ControlsFormatter
-    }, {
-        key: 'song',
-        name: 'Song'
-    }, {
-        key: 'artist',
-        name: 'Artist'
-    }, {
-        key: 'album',
-        name: 'Album'
-    }, {
-        key: 'length',
-        name: 'length'
-    },
-];
+    key: 'image',
+    name: 'image',
+    width: 75,
+    formatter: ImageFormatter
+}, {
+    key: 'controls',
+    name: 'controls',
+    className: 'result-control',
+    width: 120,
+    formatter: ControlsFormatter
+}, {
+    key: 'song',
+    name: 'Song'
+}, {
+    key: 'artist',
+    name: 'Artist'
+}, {
+    key: 'album',
+    name: 'Album'
+}, {
+    key: 'length',
+    name: 'length'
+}, ];
 
+
+var RowRenderer = React.createClass({
+    displayName: "RowRenderer",
+    getRowStyle: function() {
+        return {
+            height: '75px'
+        }
+    },
+    render: function() {
+        return (<div style={this.getRowStyle()}><ReactDataGrid.Row ref="row" {...this.props}/></div>)
+    }
+});
 
 
 var Featured = React.createClass({
@@ -90,7 +101,8 @@ var Featured = React.createClass({
                     className='table table-hover display'
                     columns={columns}
                     rowGetter={rowGetter}
-                    rowsCount={_rows.length} />             
+                    rowsCount={_rows.length}
+                    rowRenderer={RowRenderer} />             
                 </div>
             </div>
         );
