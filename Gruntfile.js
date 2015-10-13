@@ -48,27 +48,15 @@ module.exports = function(grunt) {
             }
         },
 
-        browserify: {
-            dist: {
-                files: {
-                    'build/module.js': ['client/scripts/**/*.js', 'client/scripts/**/*.coffee']
-                }
-            }
-        },
 
-        // javascript
-        babel: {
-            options: {
-                sourceMap: 'inline',
-                blacklist: 'regenerator'
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: 'src/',
-                    src: ['**/*.js'],
-                    dest: 'build/js',
-                }]
+        browserify: {
+            build: {
+                files: {
+                    'build/compiled.js': 'src/main.js'
+                },
+                options: {
+                    transform: ['babelify']
+                }
             }
         },
 
@@ -103,7 +91,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['newer:babel', 'less', 'newer:copy:dev', 'shell:web', 'watchChokidar']);
+    grunt.registerTask('default', ['browserify:build', 'less', 'newer:copy:dev', 'watchChokidar']);
 
 
     process.on('SIGINT', function() {
