@@ -43,7 +43,7 @@ var settings = {
 
         $('#invertNav').click(function() {
             settings.setInvertedNav(!$('#invertNav').hasClass("btn-success"));
-        })
+        });
 
         loadSettings();
         checkAuths();
