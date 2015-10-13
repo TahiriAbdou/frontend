@@ -43,7 +43,6 @@ var ControlsFormatter = React.createClass({
     }
 });
 
-
 //Columns definition
 var columns = [{
         key: 'image',
@@ -53,6 +52,7 @@ var columns = [{
     }, {
         key: 'controls',
         name: 'controls',
+        className: 'result-control',
         width: 120,
         formatter: ControlsFormatter
     }, {
@@ -68,20 +68,7 @@ var columns = [{
         key: 'length',
         name: 'length'
     },
-
 ];
-
-
-
-let If = React.createClass({
-    render: function() {
-        if (this.props.test) {
-            return this.props.children;
-        } else {
-            return false;
-        }
-    }
-});
 
 
 
@@ -100,10 +87,10 @@ var Featured = React.createClass({
                 <h2>Featured Songs</h2>
                 <div className="result" id="top-result">
                     <ReactDataGrid
+                    className='table table-hover display'
                     columns={columns}
                     rowGetter={rowGetter}
-                    rowsCount={_rows.length}
-                    minHeight={500} />             
+                    rowsCount={_rows.length} />             
                 </div>
             </div>
         );
