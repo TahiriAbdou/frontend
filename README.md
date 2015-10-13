@@ -1,13 +1,8 @@
 ### Getting Started
 
 - `npm install`
+- `bower install`
 
-To run the app in development:
+To run & build the app:
 
 - `npm start`
-
-Running `npm start` will download and install [Electron](http://electron.atom.io/).
-
-### Building & Release
-
-- `npm run release`
