@@ -17,7 +17,7 @@ var Preferences = React.createClass({
       <div className='content-scroller' id='content'>
         <section>
                 <h1 className='title'>General</h1>
-              
+        </section>    
       </div>
     );
   }
