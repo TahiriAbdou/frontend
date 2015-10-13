@@ -1,6 +1,6 @@
 import React from 'react/addons';
 import Router from 'react-router';
-import Isvg from 'react-inlinesvg';
+
 
 
 var Sidebar = React.createClass({
