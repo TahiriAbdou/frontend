@@ -1,6 +1,6 @@
 import React from 'react/addons';
 import Router from 'react-router';
-
+import Playlist from './Playlists.react';
 
 
 var Sidebar = React.createClass({
@@ -36,7 +36,6 @@ var Sidebar = React.createClass({
                 </li>
         </Router.Link>
         </ul>
-        
       </div>
         </div>
     );
