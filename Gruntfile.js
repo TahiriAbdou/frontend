@@ -92,10 +92,4 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', ['browserify:build', 'less', 'newer:copy:dev', 'watchChokidar']);
-
-
-    process.on('SIGINT', function() {
-        grunt.task.run(['shell:electron:kill']);
-        process.exit(1);
-    });
 };
