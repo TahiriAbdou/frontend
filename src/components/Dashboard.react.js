@@ -5,7 +5,6 @@ import utils from '../utils/Util';
 import _ from 'lodash';
 import Featured from './FeaturedSongs.react';
 import Search from './SearchSongs.react';
-import LazyLoad from 'react-lazy-load';
 
 
 let If = React.createClass({
@@ -27,7 +26,9 @@ var Dashboard = React.createClass({
         };
     },
     handleSearchChange: function(event) {
-        var value = (event.target.value !== '') ? event.target.value : false;
+        event.preventDefault();
+        var text = this.refs.search.getDOMNode().value;
+        var value = (text !== '') ? text : false;
         this.setState({
             searchQuery: value
         });
@@ -35,23 +36,19 @@ var Dashboard = React.createClass({
     render: function() {
         return (
             <div id="discover">
-                <form id="search-form">
+                <form id="search-form" onSubmit={this.handleSearchChange}>
                     <div className="input-group">
-                        <input id="searchbar" type="text" className="form-control" onChange={this.handleSearchChange} placeholder="Search for song or import URL"/>
+                        <input id="searchbar" type="text" className="form-control" ref="search" placeholder="Search for song or import URL"/>
                             <span className="input-group-btn">
                                 <button className="btn btn-primary" type="button" id="btn-search"><i className="fa fa-search"></i></button>
                             </span>
                     </div>
                 </form>
                 <If test={!this.state.searchQuery}>
-                    <LazyLoad>
-                        <Featured />
-                    </LazyLoad>
+                    <Featured />
                 </If>
                 <If test={this.state.searchQuery}>
-                    <LazyLoad>
-                       <Search value={this.state.searchQuery} />
-                    </LazyLoad>
+                    <Search value={this.state.searchQuery} />
                 </If>
             </div>
         );

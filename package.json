@@ -21,7 +21,6 @@
     "object-assign": "^4.0.1",
     "react": "^0.13.1",
     "react-data-grid": "^0.13.11",
-    "react-lazy-load": "^1.0.4",
     "react-router": "^0.13.3"
   },
   "devDependencies": {
