@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Aurous</title>
-
+    <meta charset="ISO-8859-1">
     <link href="assets/css/vendor/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/vendor/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/vendor/material-icons.css" rel="stylesheet">
@@ -50,25 +50,19 @@
                 </li>
 
             </ul>
-            <ul class="nav nav-playlist">
+			
+            <ul id="playlistContainer" class="nav nav-playlist">
+			  <li class="nav-title"><div class="pull-right"><a href="#"><i class="material-icons">chevron_right</i></a></div>PLAYLIST</li>
 
-                <li class="nav-title">
-                    <!--							<div class="pull-right"><a href="#"><i class="material-icons">chevron_right</i></a></div>-->
-                </li>
-
-                <!--	<li class="playlist-study"><a href="#"><i class="material-icons">play_arrow</i><span>Study</span></a></li>
-                    <li><a href="#"><i class="material-icons">play_arrow</i><span>Relax</span></a></li>
-                    <!--
-<li><a href="#"><i class="material-icons">play_arrow</i><span>Workout</span></a></li>
-<li id="navPlaylistNowPlaying"><a href="#"><i class="material-icons">pause</i><span>Pink Floyd</span></a></li>
--->
-                <!--<li><a href="#"><i class="material-icons">play_arrow</i><span>Pink Floyd</span></a></li>
-                <li><a href="#"><i class="material-icons">play_arrow</i><span>Sleep</span></a></li>
-                <li><a href="#"><i class="material-icons">play_arrow</i><span>Night Rider</span></a></li>
-                <li><a href="#"><i class="material-icons">play_arrow</i><span>All Things Post</span></a></li>
+				<li class="playlist-study"><a href="#"><i class="material-icons">play_arrow</i><span>Study</span></a></li>
+				 <li class="playlist-study"><a href="#"><i class="material-icons">play_arrow</i><span>Sample</span></a></li>
+			</ul>
+			<ul class="nav nav-playlist">
+                <!-- <li><a href="#"><i class="material-icons">play_arrow</i><span>Night Rider</span></a></li>-->
                 <li class="addNewPlaylist"><a href="#" data-toggle="modal" data-target="#modalAddPlaylist"><i class="material-icons">add</i><span>New playlist</span></a></li>
+				</div>
 
-            </ul>-->
+            </ul>
         </div>
 
         <!-- Player -->
@@ -154,13 +148,6 @@
                                 </div>
                                 <div>
                                     <ul id="artistSortList" class="art-list">
-                                        <a href=""  onclick='songCollection.sortByArtist("Frank Ocean", "null");' class="cd-btn">
-                                            <li>
-                                                <img src="http://img2-ak.lst.fm/i/u/91c4be7628fe4167b025c07ff8a8ec17.png" />
-                                                <h3>Frank Ocean</h3>
-                                                <p>18 songs</p>
-                                            </li>
-                                        </a>
                                         <div class="toggle-panel">
                                             <a href="#panelArtists">
                                                 <li>
@@ -504,11 +491,11 @@
                                 </ul>
                                 <ul class="nav">
                                     <div class="playlist-header">
-                                        <h1 class="pull-left"><span class="muted">Playlist: </span>Study</h1>
-                                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modalRenamePlaylist"><i class="material-icons">mode_edit</i></button>
+                                        <h1 class="pull-left"><span class="muted">Playlist: </span><i id="activePlaylistTitle"> Study </i></h1>
+                                        <!-- <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modalRenamePlaylist"><i class="material-icons">mode_edit</i></button> -->
                                         <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modalDeletePlaylist"><i class="material-icons">delete</i></button>
                                         <div class="clearfix"></div>
-                                        <p>17 songs in playlist, 1 hr 14 mins.</p>
+                                        <p id="playlistInfo">17 songs in playlist, 1 hr 14 mins.</p>
                                     </div>
                                 </ul>
                             </div>
@@ -634,15 +621,14 @@
 
 <div id="dropdown" class="jq-dropdown jq-dropdown-tip">
     <ul class="jq-dropdown-menu">
-        <li class="cyan"><a href="#1"><i class="material-icons">playlist_add</i> <span>Add to Playlist</span></a></li>
-        <li class="purple"><a href="#2"><i class="material-icons">add_circle</i> <span>Add to Collection</span></a></li>
-        <li class="jq-dropdown-divider"></li>
-        <li><a href="#3">Item 3</a></li>
-        <li><a href="#4">Item 4</a></li>
-        <li><a href="#5">Item 5</a></li>
-        <li><a href="#5">Item 6</a></li>
+        <li class="purple"><a id="addToCollection" href="#"><i class="material-icons">add_circle</i> <span>Add to Collection</span></a></li>
+        <li id="appendPlaylist" class="jq-dropdown-divider"></li>
+		
+       <!-- <li><a href="#3">Item 3</a></li> -->
+
     </ul>
 </div>
+
     
 <!-- Modals -->
 
@@ -659,7 +645,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary pull-right">Add Playlist</button>
+                <button id="createPlaylistButton" type="button" class="btn btn-primary pull-right" data-dismiss="modal">Add Playlist</button>
             </div>
         </div>
     </div>
@@ -673,7 +659,7 @@
                 <h4 class="modal-title">Rename Playlist</h4>
             </div>
             <div class="modal-body">
-                <input type="text" class="form-control" id="inputRenamePlaylist" value="CurrentPlaylistName">
+                <input  type="text" class="form-control" id="inputRenamePlaylist" value="CurrentPlaylistName">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
@@ -695,7 +681,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary pull-right">Yes, I'm sure</button>
+                <button id="deletPlaylistButton" type="button" class="btn btn-primary pull-right" data-dismiss="modal">Yes, I'm sure</button>
             </div>
         </div>
     </div>
@@ -882,6 +868,7 @@
 <script src="assets/js/app/album.js"></script>
 <script src="assets/js/app/artist.js"></script>
 <script src="assets/js/app/utils.js"></script>
+<script src="assets/js/app/playlist.js"></script>
 <script src="assets/js/app/settings.js"></script>
 <script src="assets/js/app/downloader.js"></script>
 <script src="assets/js/app/version.js"></script>

@@ -102,6 +102,24 @@ $(document).ready(function () {
             {"width": "25px"}
         ]
     });
+    $('#playlistResult').DataTable({
+        paging: false,
+        "oLanguage": {
+            "asStripeClasses": [''],
+            scrollY:        200,
+            deferRender:    true,
+            scroller:       true,
+            "sSearch": "Filter: ",
+            "sEmptyTable": "This playlist is empty, try adding some songs from your collection or search results"
+        },
+        "columns": [
+            {"width": "50px"},
+            null,
+            null,
+            null,
+            {"width": "25px"}
+        ]
+    });
     $('.dataTables_filter input').addClass('form-control');
 
 
@@ -334,6 +352,26 @@ $(document).ready(function () {
         window.previousDiscovery = aurousScript(this);
         window.previousDiscoveyId = id;
     });
+    aurousScript("#playlistResult").on('dblclick', 'tr', function (e) {
+        e.preventDefault();
+        if (window.previousPlaylistId !== undefined) {
+            aurousScript(window.previousPlaylistId).removeClass("result-now-playing");
+            aurousScript("#playlist-row-icon-" + window.previousPlaylistId).html("play_arrow");
+        }
+        var id = aurousScript(this).attr('playlist-data-id');
+        var url = aurousScript(this).attr('playlist-data-value');
+        var artist = aurousScript(this).attr('playlist-data-artist-name');
+        var song = aurousScript(this).attr('playlist-data-song-name');
+        var albumArt = aurousScript(this).attr('playlist-data-album-art');
+
+        aurousScript("#playlist-row-icon-" + id).html("pause");
+        aurousScript(this).addClass("result-now-playing");
+        aurousScript.player.changeMedia(song, artist, albumArt, url);
+        aurousScript("#playerPause").show();
+        aurousScript("#playerPlay").hide();
+        window.previousPlaylist = aurousScript(this);
+        window.previousPlaylistId = id;
+    });
 
     for (var i = 0; i < 6; i++) {
         aurousScript("#discover-row-icon-" + i).on("click", function () {
@@ -487,7 +525,10 @@ $(document).ready(function () {
     $('#nav-discover').click();
     if (typeof loadSettings == 'function') {
         settings.bind();
+        playlist.bind();
+        loadAllPlaylist();
     }
 
     versionChecker.checkForUpdate();
+
 });

@@ -1,8 +1,9 @@
 /**
  * Created by Andrew on 10/9/2015.
+ * These versions are for internal and not actual versions for major release
  */
 var versionChecker = {
-    version: 0.1,
+    version: 0.11,
     api: "https://aurous.me/api/version/",
     checkForUpdate: function() {
         $.getJSON(versionChecker.api, function(data) {

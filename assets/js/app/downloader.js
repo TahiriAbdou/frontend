@@ -6,7 +6,7 @@ var downloader = {
          if (typeof downloadSongAsync == 'function') {
              var extension = remoteUrl.split('.').pop();
              var fileName = songName + "-" + artist + "." + extension;
-            downloadSongAsync(remoteUrl, fileName)
+            downloadSongAsync(remoteUrl, fileName);
           alertify.success("Downloading " + fileName);
          }
      }
