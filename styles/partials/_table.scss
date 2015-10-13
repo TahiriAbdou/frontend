@@ -1,0 +1,131 @@
+.table > {
+    margin-bottom: -25px;
+    min-width: 600px;
+    overflow: auto;
+
+    thead > tr > th {
+        border-bottom: 1px solid rgba(white, 0.05);
+        font-weight: 500;
+
+        > i {
+            font-size: 18px;
+        }
+    }
+    
+    tbody {
+        .result-data-value {
+            display: none;
+        }
+
+        > tr {
+            > td {
+                border-top: 1px solid rgba(white, 0.025);
+                padding: 4px;
+                vertical-align: middle;
+
+                > {
+                    a {
+                        margin-right: 0px;
+                        color: rgba(white, 0.5);
+                        transition: color 0.1s;
+
+                        &:hover {
+                            color: rgba(white, 1);
+                            transition: color 0.1s;
+                        }
+
+                        > i {
+                            font-size: 24px;
+                            margin-top: -8px;
+                        }
+                    }
+
+                    button > a {
+                        margin-right: 0px;
+                        color: rgba(white, 0.5);
+                        transition: color 0.1s;
+
+                        &:hover,
+                        &:focus {
+                            color: rgba(white, 1);
+                            transition: color 0.1s;
+                        }
+                    }
+                    button {
+                        color: rgba(white, 0.5);
+
+                        &:hover,
+                        &:focus {
+                            color: rgba(white, 1);
+                            transition: color 0.1s;
+                        }
+                    }
+                }
+            }
+
+            &.result-now-playing > td { //now playing
+                color: rgba(white, 1);
+                background-color: rgba(white, 0.05);
+
+                > {
+                    button > a {
+                        margin-right: 0px;
+                        color: rgba(white, 1);
+                        transition: color 0.1s;
+
+                        &:hover,
+                        &:focus {
+                            color: rgba(white, 1);
+                            transition: color 0.1s;
+                        }
+                    }
+                    button {
+                        color: rgba(white, 1);
+
+                        &:hover,
+                        &:focus {
+                            color: rgba(white, 1);
+                            transition: color 0.1s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: rgba(white, 0.02);
+}
+
+.result-control {
+    a i {
+        margin-top: 3px;
+    }
+}
+
+.result-control .control-show {
+    opacity: 0;
+}
+
+.result-now-playing .control-show {
+    opacity: 1 !important;
+}
+
+/* Datatable */
+
+table.dataTable thead .sorting:after {
+	content: "";
+}
+table.dataTable thead .sorting_asc:after {
+	content: "";
+}
+table.dataTable thead .sorting_desc:after {
+	content: "";
+}
+
+/* Top result */
+
+.table img {
+    width: 100%;
+}

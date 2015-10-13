@@ -1,0 +1,25 @@
+.alert {
+    padding: 10px;
+}
+
+.alert-error {
+    background-color: rgba(231, 76, 60, 0.25);
+    border-radius: 3px;
+    color: white;
+}
+
+.alert-info {
+    background-color: rgba($blue, 0.1);
+    border: 2px solid rgba($blue, 0.25);
+    color: white;
+    border-radius: 3px;
+    color: white;
+}
+
+.alert-warning {
+    background-color: rgba($yellow, 0.1);
+    border: 2px solid rgba($yellow, 0.25);
+    color: white;
+    border-radius: 3px;
+    color: white;
+}

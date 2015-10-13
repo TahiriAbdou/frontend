@@ -1,0 +1,76 @@
+#titlebar {
+    .navbar {
+        min-height: 30px;
+    }
+
+    .navbar li a {
+        padding: 0;
+    }
+
+    .navbar-inverse {
+        background-color: $titlebar;
+        border-radius: 0;
+        border: none;
+    }
+
+    .navbar-brand {
+        height: 30px;
+        padding: 7px 15px;
+
+        img {
+            height: 20px;
+        }
+    }
+
+    .btn-window {
+        width: 90px;
+        padding: 2px 0 6px 10px;
+
+        li a {
+            opacity: 0.5;
+            margin-top: 0;
+            transition: opacity 0.1s;
+            padding: 0 7px 0 7px;
+
+            &:hover {
+                opacity: 1;
+                transition: opacity 0.1s;
+            }
+        }
+        
+        li.close-app:hover {
+            background-color: rgba(red, 0.25);
+        }
+    }
+
+    .navbar-nav {
+        > li {
+            float: left;
+        }
+
+        &.navbar-right:last-child {
+            margin-right: -20px;
+        }
+    }
+
+    .navbar-collapse.collapse {
+        display: block;
+    }
+}
+
+@media screen and(max-width: 767px) {
+    #titlebar {
+        .navbar-nav {
+            margin: 0;
+            float: right;
+        }
+
+        .navbar-brand {
+            padding: 7px 0;
+        }
+    }
+
+    .table-responsive {
+        border: none;
+    }
+}

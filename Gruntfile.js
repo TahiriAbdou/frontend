@@ -36,18 +36,16 @@ module.exports = function(grunt) {
             }
         },
 
-        // styles
-        less: {
+        sass: {
             options: {
-                sourceMapFileInline: true
+                sourceMap: true
             },
             dist: {
                 files: {
-                    'build/css/main.css': 'styles/main.less'
+                    'build/css/main.css': 'styles/main.scss'
                 }
             }
         },
-
 
         browserify: {
             build: {
@@ -78,11 +76,11 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['src/**/*.js'],
-                tasks: ['newer:babel']
+                tasks: ['browserify:build']
             },
-            less: {
-                files: ['styles/**/*.less'],
-                tasks: ['less']
+            sass: {
+                files: ['styles/**/*.scss'],
+                tasks: ['sass']
             },
             copy: {
                 files: ['images/*', 'index.html', 'fonts/*'],
@@ -91,5 +89,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['browserify:build', 'less', 'newer:copy:dev', 'watchChokidar']);
+    grunt.registerTask('default', ['browserify:build', 'sass', 'newer:copy:dev', 'watchChokidar']);
 };
