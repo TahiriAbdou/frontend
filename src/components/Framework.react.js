@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
 import Sidebar from './Sidebar.react';
+import Header from './Header.react';
 
 var Client = React.createClass({
 
@@ -26,11 +27,16 @@ var Client = React.createClass({
   
   render: function () {
     return (
-      <div>
-        <div className="content-container">
+      <div className="wrapper">
           <Sidebar />
-          <Router.RouteHandler />
-        </div>
+          <div className="main">
+            <div className="container-fluid">
+              <div className="col-xs-12">
+                <Header />
+                <Router.RouteHandler />
+              </div>
+            </div>
+          </div>
       </div>
     );
   }
