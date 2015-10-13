@@ -5,7 +5,7 @@ import utils from '../utils/Util';
 import ReactDataGrid from 'react-data-grid';
 
 var _rows = [];
-for (var i = 1; i < 200; i++) {
+for (var i = 1; i < 10; i++) {
     _rows.push({
         controls: true,
         song: 'something',
@@ -78,6 +78,7 @@ var SearchResults = React.createClass({
         return (
             <div id="discoverIntro">
                 <h2>Featured Songs</h2>
+                  
                 <div className="result" id="top-result">
                     <ReactDataGrid
                     className='table table-hover display'
@@ -86,6 +87,7 @@ var SearchResults = React.createClass({
                     rowsCount={_rows.length}
                     rowRenderer={RowRenderer} />             
                 </div>
+                
             </div>
         );
 

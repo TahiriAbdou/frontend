@@ -2,7 +2,9 @@ import React from 'react/addons';
 import Router from 'react-router';
 import Settings from '../utils/SettingsUtil';
 import utils from '../utils/Util';
+import _ from 'lodash';
 import Featured from './FeaturedSongs.react';
+import Search from './SearchSongs.react';
 
 
 let If = React.createClass({
@@ -18,7 +20,6 @@ let If = React.createClass({
 
 var Dashboard = React.createClass({
     mixins: [Router.Navigation],
-
     getInitialState: function() {
         return {
            searchQuery: false
@@ -44,6 +45,10 @@ var Dashboard = React.createClass({
                 <If test={!this.state.searchQuery}>
                     <Featured />
                 </If>
+                <If test={this.state.searchQuery}>
+                    <Search value={this.state.searchQuery} />
+                </If>
+
             </div>
         );
 
