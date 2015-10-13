@@ -11,7 +11,6 @@ let If = React.createClass({
     }
 });
 
-
 var Header = React.createClass({
     mixins: [Router.Navigation],
 
@@ -38,9 +37,7 @@ var Header = React.createClass({
                         </nav>
                     </div>
         );
-
     }
-
 });
 
 
