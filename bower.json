@@ -5,7 +5,8 @@
     "font-awesome": "~4.4.0",
     "alertify.js": "~0.3.11",
     "seiyria-bootstrap-slider": "~5.2.1",
-    "bootstrap-select": "~1.7.4"
+    "bootstrap-select": "~1.7.4",
+    "google-material-icons": "~0.1.0"
   },
   "dependenciesIgnore": {
     "font-awesome": [
@@ -17,6 +18,9 @@
       "**/!(dist)"
     ],
     "seiyria-bootstrap-slider": [
+      "src"
+    ],
+    "google-material-icons": [
       "**/!(dist)"
     ],
     "bootstrap-select": [
