@@ -9,10 +9,20 @@ var Sidebar = React.createClass({
   },
   render: function () {
     return (
+
+
+
       <ul className="sidebar">
-      <div className="sidebar-logo">
-        <Isvg src="./images/logo.svg" />
-      </div>
+        <div className="nav-profile">
+          <div className="nav-profile-picture pull-left">
+            <img id="sideBarAvatar" src="images/avatar.png" className="img-circle profile-picture"/>
+          </div>
+          <div className="nav-username pull-left">AurousUser</div>
+          <div className="nav-settings pull-right">
+            <button type="button" className="btn btn-transparent" data-toggle="modal" data-target="#modalSettings"><i className="material-icons">settings</i></button>
+          </div>
+        </div>
+
         <Router.Link to="dashboard">
           <li>
             <p>Dashboard</p>

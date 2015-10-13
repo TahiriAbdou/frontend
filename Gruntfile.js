@@ -58,9 +58,10 @@ module.exports = function(grunt) {
             }
         },
 
-        shell: {
-
-
+        open: {
+            build: {
+                path: 'build/index.html'
+            }
         },
 
         // livereload
@@ -89,5 +90,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['browserify:build', 'sass', 'newer:copy:dev', 'watchChokidar']);
+    grunt.registerTask('default', ['browserify:build', 'sass', 'newer:copy:dev', 'open', 'watchChokidar']);
 };
