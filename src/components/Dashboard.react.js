@@ -44,16 +44,15 @@ var Dashboard = React.createClass({
                     </div>
                 </form>
                 <If test={!this.state.searchQuery}>
-                <LazyLoad>
-                    <Featured />
-                </LazyLoad>
+                    <LazyLoad>
+                        <Featured />
+                    </LazyLoad>
                 </If>
                 <If test={this.state.searchQuery}>
-                <LazyLoad>
-                    <Search value={this.state.searchQuery} />
-                </LazyLoad>
+                    <LazyLoad>
+                       <Search value={this.state.searchQuery} />
+                    </LazyLoad>
                 </If>
-
             </div>
         );
 
