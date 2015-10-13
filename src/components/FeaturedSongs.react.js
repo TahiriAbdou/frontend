@@ -44,13 +44,12 @@ var ControlsFormatter = React.createClass({
 //Columns definition
 var columns = [{
     key: 'image',
-    name: 'image',
+    name: '',
     width: 75,
     formatter: ImageFormatter
 }, {
     key: 'controls',
-    name: 'controls',
-    className: 'result-control',
+    name: '',
     width: 120,
     formatter: ControlsFormatter
 }, {
@@ -65,7 +64,7 @@ var columns = [{
 }, {
     key: 'length',
     name: 'length'
-}, ];
+}];
 
 
 var RowRenderer = React.createClass({
